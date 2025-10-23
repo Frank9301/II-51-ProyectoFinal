@@ -133,25 +133,28 @@
   </header>
 
   <main>
-    <div class="login-card">
-      <h2>Inicio de sesión</h2>
-      <form action="estudiantes/index.html" method="get">
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="tuemail@universidad.com" required>
+     <div class="login-card">
+    <h2>Inicio de sesión</h2>
 
-        <label for="pass">Contraseña</label>
-        <input type="password" id="pass" name="pass" placeholder="********" required minlength="4">
+    <!-- Enviar al listado de estudiantes dentro de su CARPETA -->
+    <form action="./Estudiantes/Estudiantes.html" method="get">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tuemail@universidad.com" required>
 
-        <button type="submit">Ingresar</button>
-      </form>
+      <label for="pass">Contraseña</label>
+      <input type="password" id="pass" name="pass" placeholder="********" required minlength="4">
 
-      <div class="links">
-        <p>O visita directamente:</p>
-        <a href="estudiantes/index.html">Estudiantes</a> |
-        <a href="cursos/index.html">Cursos</a> |
-        <a href="profesores/index.html">Profesores</a>
-      </div>
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <!-- ENLACES a las subcarpetas -->
+    <div class="links" style="margin-top:16px">
+      <p>O visita directamente:</p>
+      <a href="./Estudiantes/Estudiantes.html">Estudiantes</a> |
+      <a href="./Cursos/Cursos.html">Cursos</a> |
+      <a href="./Profesores/Profesores.html">Profesores</a>
     </div>
+  </div>
   </main>
 
   <footer>
