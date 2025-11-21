@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Universidad Central - Registro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    header {
+      background: #9C27B0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      padding: 10px;
+      background: #e0e0e0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #9C27B0;
+      transform: scale(1.1);
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    form {
+      margin-top: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #f3e5f5;
+      border: 1px solid #ce93d8;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    small {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-primario {
+      background: #9C27B0;
+      color: white;
+    }
+
+    .btn-secundario {
+      background: #e0e0e0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Registro de Estudiantes</h1>
+    <p>Formulario general de matrícula</p>
+  </header>
+
+  <nav>
+    <a href="../index.html">Login</a> |
+    <a href="../Estudiantes/Estudiantes.html">Estudiantes</a> |
+    <a href="../Cursos/Cursos.html">Cursos</a> |
+    <a href="../Profesores/Profesores.html">Profesores</a> |
+    <a href="./Registro.html">Registro</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Completar datos del estudiante</h2>
+      <form action="../php/guardar_registro.php" method="post">
+        <label for="id">ID del estudiante</label>
+        <input type="number" id="id" name="id" required min="1" step="1">
+
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required minlength="3"
+               pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" title="Solo letras y espacios">
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="curso">Curso</label>
+        <select id="curso" name="curso" required>
+          <option value="">Seleccione un curso</option>
+          <option value="123456">Programación I</option>
+          <option value="123457">Programación II</option>
+          <option value="123458">Programación III</option>
+          <option value="123459">Desarrollo Web</option>
+          <option value="123450">Estructura de datos</option>
+          <option value="123455">Programación a Internet</option>
+        </select>
+
+        <label for="profesor">Profesor asignado</label>
+        <select id="profesor" name="profesor" required>
+          <option value="">Seleccione un profesor</option>
+          <option value="1">Fabián Chinchilla Mayorga</option>
+          <option value="2">Carlos Ugalde</option>
+          <option value="3">María Zeledón</option>
+          <option value="4">Mario Núñez</option>
+        </select>
+
+        <label for="clave">Contraseña de acceso</label>
+        <input type="password" id="clave" name="clave" required minlength="6"
+               pattern=".{6,}" title="Al menos 6 caracteres">
+
+        <label for="clave2">Confirmar contraseña</label>
+        <input type="password" id="clave2" name="clave2" required minlength="6"
+               pattern=".{6,}" title="Debe coincidir con la contraseña anterior">
+
+        
+
+        <button type="submit" class="btn-primario">Guardar registro</button>
+        <button type="reset" class="btn-secundario">Limpiar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
